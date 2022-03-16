@@ -7,11 +7,15 @@ function testall(){
   for (var i = 0; i < sizes.length; i++) {
     var n = sizes[i];
     if(!testhash(n)){
-    		document.body.innerHTML = document.body.innerHTML + "<div>FAILED AT"+ n +"</div>";
+    		var elem = document.createElement("div");
+        elem.innerHTML = "<div>failed at: "+n+"</div>";
+        document.body.appendChild(elem);
         return
     }
   }
-  document.body.innerHTML = document.body.innerHTML + "<div>SUCCESS!!</div>";
+  var elem = document.createElement("div");
+  elem.innerHTML = "<div>SUCCESS!!</div>";
+  document.body.appendChild(elem);
 }
 
 function testhash(n){
