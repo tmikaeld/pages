@@ -8,7 +8,6 @@ function testall(){
     var n = sizes[i];
     if(!testhash(n)){
     		document.body.innerHTML = document.body.innerHTML + "<div>FAILED AT"+ n +"</div>";
-        document.body.innerHtml = 'FAILED AT'+ n;
         return
     }
   }
@@ -32,9 +31,9 @@ function makestring(n){
     return text;
 }
 
-$( document ).ready(function() {
-  testall()
-});
+body.onload = function(){
+ testall()
+}
 </script>
 
   </body>
