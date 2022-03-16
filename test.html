@@ -1,0 +1,36 @@
+<body></body>
+<script>
+function testall(){
+  var sizes = [10,100,1000,2000,2025,2050,2100,2250,2500,2750,3000,4000,5000,10000, 50000];
+  for (var i = 0; i < sizes.length; i++) {
+    var n = sizes[i];
+    if(!testhash(n)){
+    		document.body.innerHTML = document.body.innerHTML + "<div>FAILED AT"+ n +"</div>";
+        document.body.innerHtml = 'FAILED AT'+ n;
+        return
+    }
+  }
+  document.body.innerHTML = document.body.innerHTML + "<div>SUCCESS!!</div>";
+}
+
+function testhash(n){
+    var somestring = "#" + makestring(n);
+    window.location.hash = somestring; 
+    var success = (window.location.hash == somestring); 
+    return success
+}    
+
+function makestring(n){
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < n; i++ ){
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
+}
+
+$( document ).ready(function() {
+  testall()
+});
+</script>
