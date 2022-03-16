@@ -8,13 +8,13 @@ function testall(){
     var n = sizes[i];
     if(!testhash(n)){
     		var elem = document.createElement("div");
-        elem.innerHTML = "<div>failed at: "+n+"</div>";
+        elem.innerHTML = '<div style="font-size:25px;">failed at: "+n+"</div>';
         document.body.appendChild(elem);
         return
     }
   }
   var elem = document.createElement("div");
-  elem.innerHTML = "<div>SUCCESS!!</div>";
+  elem.innerHTML = '<div style="font-size:25px;">SUCCESS!!</div>';
   document.body.appendChild(elem);
 }
 
